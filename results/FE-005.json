@@ -1,0 +1,35 @@
+{
+  "taskId": "FE-005",
+  "model": "gemini-3.8-flash",
+  "review": {
+    "summary": "The search button is an icon-only button without an accessible name, making it inaccessible to screen reader users.",
+    "findings": [
+      {
+        "category": "accessibility",
+        "severity": "high",
+        "explanation": "The `<button>` element contains only an SVG marked with `aria-hidden=\"true\"` and provides no text content, `aria-label`, or `aria-labelledby` attribute. Assistive technologies cannot compute an accessible name for the button, violating WCAG 2.1 Success Criterion 4.1.2 (Name, Role, Value).",
+        "recommendation": "Provide an accessible name to the button, for example by adding an `aria-label=\"Search\"` attribute to the `<button>` element."
+      }
+    ]
+  },
+  "grade": {
+    "truePositives": 1,
+    "falsePositives": 0,
+    "falseNegatives": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "proposedFix": {
+    "explanation": "Added `aria-label=\"Search\"` to the `<button>` element so assistive technologies can announce the button's purpose.",
+    "candidateFile": "results/FE-005-candidate.ts",
+    "status": "saved"
+  },
+  "fixValidation": {
+    "status": "passed",
+    "command": "node node_modules/vitest/vitest.mjs run tests/candidate-accessibility.test.ts",
+    "exitCode": 0,
+    "output": "\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv5.0.4 \u001b[39m\u001b[90mC:/Users/Admin/Documents/frontend-eval\u001b[39m\n\n \u001b[32m✓\u001b[39m tests/candidate-accessibility.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m   Start at \u001b[22m 12:21:38\n\u001b[2m   Duration \u001b[22m 367ms\u001b[2m (transform 68%, import 21%, worker 7%, tests 4%)\u001b[22m"
+  },
+  "evaluatedAt": "2026-10-23T06:51:38.728Z"
+}

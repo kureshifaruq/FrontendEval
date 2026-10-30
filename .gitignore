@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+results/*
+!results/.gitkeep
+!results/benchmark-summary.json
+!results/FE-001.json
+!results/FE-002.json
+!results/FE-003.json
+!results/FE-004.json
+!results/FE-005.json

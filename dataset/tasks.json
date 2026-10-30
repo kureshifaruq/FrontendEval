@@ -1,0 +1,145 @@
+[
+  {
+    "id": "FE-001",
+    "title": "Stale search results",
+    "category": "async-race-condition",
+    "sourceFile": "src/fixtures/buggy-search.ts",
+    "prompt": "Review this search controller for production defects. Explain any reproducible behavioral bug and recommend a minimal fix.",
+    "expectedDefects": [
+      {
+        "id": "D1",
+        "category": "async-race-condition",
+        "severity": "high",
+        "expectedBehavior": "Only the latest search request may update the results.",
+        "evidenceGroups": [
+          [
+            "older response",
+            "stale response",
+            "outdated response",
+            "earlier (stale) result",
+            "stale result",
+            "earlier promise resolves after the later promise"
+          ],
+          [
+            "overwrite newer results",
+            "overwrite the newer result",
+            "overwrite the newer results",
+            "overwrite the latest results",
+            "replace newer results"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FE-002",
+    "title": "Clean search filtering",
+    "category": "clean-code-control",
+    "sourceFile": "src/fixtures/clean-search.ts",
+    "prompt": "Review this search filtering function for production defects. Report only demonstrable correctness, security, or accessibility issues supported by the code and its requirements.",
+    "expectedDefects": []
+  },
+  {
+    "id": "FE-003",
+    "title": "Loading state stuck after failure",
+    "category": "loading-state",
+    "sourceFile": "src/fixtures/buggy-loading.ts",
+    "prompt": "Review this asynchronous data loader. Identify reproducible defects in loading and error-state handling. Loading must return to false after either success or failure.",
+    "expectedDefects": [
+      {
+        "id": "D1",
+        "category": "loading-state",
+        "severity": "medium",
+        "expectedBehavior": "The loading flag must be reset to false whether the asynchronous operation succeeds or rejects.",
+        "evidenceGroups": [
+          [
+            "loading remains true",
+            "loading stays true",
+            "loading flag is not reset",
+            "loading indicator stuck",
+            "loading flag remains true",
+            "loading is not reset"
+          ],
+          [
+            "failure",
+            "fails",
+            "rejects",
+            "throws",
+            "request rejects",
+            "request fails"
+          ],
+          [
+            "finally",
+            "reset loading",
+            "loading false",
+            "returns to false",
+            "set loading to false"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FE-004",
+    "title": "Partial numeric input accepted",
+    "category": "input-validation",
+    "sourceFile": "src/fixtures/buggy-quantity.ts",
+    "prompt": "Review this quantity parser. It must accept only strings containing a positive whole number, such as '2' or '25'. Inputs such as '2abc', '2.5', empty strings, zero, and negative values must be rejected.",
+    "expectedDefects": [
+      {
+        "id": "D1",
+        "category": "input-validation",
+        "severity": "medium",
+        "expectedBehavior": "Reject malformed numeric strings instead of accepting a valid numeric prefix.",
+        "evidenceGroups": [
+          [
+            "parseInt",
+            "partial numeric input",
+            "numeric prefix"
+          ],
+          [
+            "2abc",
+            "2.5",
+            "trailing characters"
+          ],
+          [
+            "reject",
+            "return null",
+            "validate the entire input"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FE-005",
+    "title": "Icon-only button lacks accessible name",
+    "category": "accessibility",
+    "sourceFile": "src/fixtures/buggy-icon-button.ts",
+    "prompt": "Review this icon-button markup for accessibility defects. The button must have an accessible name for users of assistive technology. The decorative icon alone must not be relied upon to label the button.",
+    "expectedDefects": [
+      {
+        "id": "D1",
+        "category": "accessibility",
+        "severity": "high",
+        "expectedBehavior": "The icon-only button must expose a meaningful accessible name, for example through an aria-label.",
+        "evidenceGroups": [
+          [
+            "accessible name",
+            "aria-label",
+            "aria-labelledby"
+          ],
+          [
+            "screen reader",
+            "assistive technology",
+            "accessible"
+          ],
+          [
+            "button",
+            "icon-only button"
+          ]
+        ]
+      }
+    ]
+  }
+]

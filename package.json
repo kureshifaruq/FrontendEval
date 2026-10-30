@@ -1,0 +1,30 @@
+{
+  "name": "frontend-eval",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit",
+    "build-prompt": "tsx src/cli.ts",
+    "evaluate": "tsx src/run-eval.ts",
+    "validate-fix": "tsx src/validate-fix.ts",
+    "summarize": "tsx src/summarize-results.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  },
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^2.30.0",
+    "dotenv": "^18.0.8",
+    "openai": "^7.39.0"
+  }
+}

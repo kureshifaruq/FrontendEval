@@ -1,0 +1,86 @@
+{
+  "model": [
+    "gemini-3.8-flash"
+  ],
+  "taskCount": 5,
+  "completedTaskCount": 5,
+  "failedEvaluationCount": 0,
+  "missingTaskIds": [],
+  "invalidResultFiles": [],
+  "defectTasks": 4,
+  "cleanTasks": 1,
+  "totals": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  "metrics": {
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "fixValidation": {
+    "passed": 4,
+    "failed": 0,
+    "timedOut": 0,
+    "notRun": 1
+  },
+  "failures": [],
+  "tasks": [
+    {
+      "taskId": "FE-001",
+      "findings": 1,
+      "truePositives": 1,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "fixStatus": "passed"
+    },
+    {
+      "taskId": "FE-002",
+      "findings": 0,
+      "truePositives": 0,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "fixStatus": "not-run"
+    },
+    {
+      "taskId": "FE-003",
+      "findings": 1,
+      "truePositives": 1,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "fixStatus": "passed"
+    },
+    {
+      "taskId": "FE-004",
+      "findings": 1,
+      "truePositives": 1,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "fixStatus": "passed"
+    },
+    {
+      "taskId": "FE-005",
+      "findings": 1,
+      "truePositives": 1,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "fixStatus": "passed"
+    }
+  ]
+}
