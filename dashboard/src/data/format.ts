@@ -61,6 +61,8 @@ export function formatTimestamp(value: string | null | undefined): string {
 }
 
 export function stripAnsi(text: string): string {
+  // ANSI terminal escape sequences contain control characters by design.
+  // eslint-disable-next-line no-control-regex
   return text.replace(/\u001B\[[0-9;]*[A-Za-z]/g, "");
 }
 

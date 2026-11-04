@@ -117,12 +117,9 @@ async function buildBundle(root: string): Promise<unknown> {
     }
   }
 
-  let readme = "";
-  try {
-    readme = (await readAllowedFile(root, "README.md")).toString("utf8");
-  } catch {
-    readme = "";
-  }
+  const readme = await readAllowedFile(root, "README.md")
+  .then((buffer) => buffer.toString("utf8"))
+  .catch(() => "");
 
   return {
     summary,
