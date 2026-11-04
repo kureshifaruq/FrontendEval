@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap");
+
+html {
+  min-width: 360px;
+  min-height: 100%;
+  background: #0b0d12;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100vh;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #a294ff;
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #fff;
+  background: #6553bd;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #393c4b #12141b;
+}
